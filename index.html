@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Appendix — SOX Section 302/404 and the Autonomous Agent Challenge</title>
+<style>
+  @page { size: A4; margin: 20mm 18mm 25mm 18mm; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { font-size: 11pt; }
+  body {
+    font-family: "Times New Roman", "Noto Serif", Georgia, serif;
+    line-height: 1.8;
+    color: #1a1a1a;
+    background: #f5f5f0;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 30px;
+  }
+  @media screen { body { background: #fff; box-shadow: 0 0 20px rgba(0,0,0,0.08); } }
+
+  header { text-align: center; margin-bottom: 2em; padding-bottom: 1.5em; border-bottom: 2px solid #333; }
+  header h1 { font-size: 14pt; font-weight: 700; margin-bottom: 0.3em; line-height: 1.3; }
+  header .subtitle { font-size: 11pt; color: #444; margin-bottom: 1em; }
+  header .meta { font-size: 9.5pt; color: #666; }
+
+  h2 { font-size: 13pt; font-weight: 700; margin-top: 2em; margin-bottom: 0.6em; text-align: center; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid #999; padding-bottom: 0.3em; }
+  h3 { font-size: 11.5pt; font-weight: 700; margin-top: 1.5em; margin-bottom: 0.4em; }
+  h4 { font-size: 11pt; font-weight: 700; margin-top: 1.2em; margin-bottom: 0.3em; }
+  p { margin-bottom: 0.8em; text-align: justify; }
+
+  .principle { margin-bottom: 0.8em; }
+  .principle strong { }
+
+  .extension {
+    border: 1px solid #333;
+    padding: 0.8em 1em;
+    margin: 0.8em 0;
+    font-size: 10pt;
+    line-height: 1.65;
+    background: #fafafa;
+  }
+  .extension .ext-label { font-weight: 700; font-variant: small-caps; margin-right: 0.3em; }
+
+  .cite { color: #1a5276; }
+  .toc { margin: 1.5em 0; padding: 1em 1.5em; border: 1px solid #ccc; background: #fafaf8; }
+  .toc h3 { margin-top: 0; font-size: 11pt; }
+  .toc ul { list-style: none; padding-left: 0; }
+  .toc li { margin-bottom: 0.3em; }
+  .toc a { color: #1a5276; text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+
+  .back-to-top { font-size: 9pt; color: #888; text-align: right; margin-top: 1em; }
+  .back-to-top a { color: #1a5276; text-decoration: none; }
+
+  footer { margin-top: 3em; padding-top: 1em; border-top: 1px solid #ccc; font-size: 9pt; color: #888; text-align: center; }
+
+  @media (max-width: 768px) {
+    body { padding: 16px 14px; box-shadow: none; }
+    html { font-size: 10pt; }
+    h2 { font-size: 12pt; }
+    .extension { padding: 0.6em 0.8em; font-size: 9.5pt; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Online Appendix</h1>
+  <div class="subtitle">Technical Assumptions in SOX Section 302/404 and the Autonomous Agent Challenge:<br>
+  A Structured Assumption&ndash;Violation Mapping of Internal Controls Over Financial Reporting in Agentic AI Environments</div>
+  <div class="meta">
+    Submitted to: <em>Journal of Emerging Technologies in Accounting</em> (JETA)<br>
+    Special Section: Agentic AI in Auditing and Accounting
+  </div>
+</header>
+
+<p>This appendix accompanies the main paper and provides detailed analyses summarized in the main text by Table&nbsp;3 (COSO component assumption&ndash;violation map) and Table&nbsp;6 (summary of proposed COSO extensions).</p>
+
+<div class="toc">
+<h3>Contents</h3>
+<ul>
+  <li><a href="#appendix-a">Appendix A. COSO Principle-by-Principle Analysis</a></li>
+  <li>&emsp;<a href="#a1">A.1 Control Environment (Principles 1&ndash;5)</a></li>
+  <li>&emsp;<a href="#a2">A.2 Risk Assessment (Principles 6&ndash;9)</a></li>
+  <li>&emsp;<a href="#a3">A.3 Control Activities (Principles 10&ndash;12)</a></li>
+  <li>&emsp;<a href="#a4">A.4 Information and Communication (Principles 13&ndash;15)</a></li>
+  <li>&emsp;<a href="#a5">A.5 Monitoring (Principles 16&ndash;17)</a></li>
+  <li><a href="#appendix-b">Appendix B. Detailed COSO Extension Definitions</a></li>
+  <li>&emsp;<a href="#b1">B.1 Control Environment Extensions (1.1&ndash;1.4)</a></li>
+  <li>&emsp;<a href="#b2">B.2 Risk Assessment Extensions (2.1&ndash;2.3)</a></li>
+  <li>&emsp;<a href="#b3">B.3 Control Activities Extensions (3.1&ndash;3.4)</a></li>
+  <li>&emsp;<a href="#b4">B.4 Information and Communication Extensions (4.1&ndash;4.3)</a></li>
+  <li>&emsp;<a href="#b5">B.5 Monitoring Extensions (5.1&ndash;5.3)</a></li>
+</ul>
+</div>
+
+<!-- ================================================================ -->
+<h2 id="appendix-a">Appendix A. COSO Principle-by-Principle Analysis</h2>
+
+<p>The COSO Internal Control &mdash; Integrated Framework (2013) defines five interrelated components of internal control, supported by seventeen principles <span class="cite">(COSO 2013)</span>. This appendix maps each component and its associated principles to AI agent behaviors, identifying where the framework&rsquo;s assumptions break down. The main paper summarizes these findings in Table&nbsp;3.</p>
+
+<!-- A.1 -->
+<h3 id="a1">A.1 Control Environment (Principles 1&ndash;5)</h3>
+
+<p>The Control Environment is &ldquo;the set of standards, processes, and structures that provide the basis for carrying out internal control across the organization&rdquo; <span class="cite">(COSO 2013)</span>. It encompasses five principles:</p>
+
+<p class="principle"><strong>Principle 1: The organization demonstrates a commitment to integrity and ethical values.</strong> This principle assumes that the actors within the control environment possess the capacity for ethical reasoning and can be held to integrity standards through training, codes of conduct, disciplinary mechanisms, and cultural norms. AI agents do not possess ethical capacity in any meaningful sense. They optimize for objective functions. An AI agent processing journal entries does not &ldquo;commit to integrity&rdquo; but executes instructions within parameters. If those parameters are misspecified, the agent will produce outputs that violate ethical norms without any awareness that it has done so <span class="cite">(Floridi and Chiriatti 2020)</span>. The distinction has practical significance: integrity failures by human employees are addressed through the disciplinary and legal systems contemplated by COSO. Integrity failures by AI agents require entirely different remediation mechanisms, none of which exist in the current framework.</p>
+
+<p class="principle"><strong>Principle 2: The board of directors demonstrates independence from management and exercises oversight of the development and performance of internal control.</strong> Board oversight assumes that the board can understand, at an appropriate level of abstraction, the processes it oversees. When financial processes are operated by humans, board members can evaluate control effectiveness through management presentations, audit committee reports, and their own professional experience with financial operations. When financial processes are operated by AI agents, board oversight requires technical understanding of AI system behavior, a competency that most corporate boards do not possess <span class="cite">(Enriques and Zetzsche 2020)</span>. Industry surveys consistently indicate that a small minority of board members report confidence in their understanding of AI risk in financial reporting <span class="cite">(NACD 2025)</span>.</p>
+
+<p class="principle"><strong>Principle 3: Management establishes, with board oversight, structures, reporting lines, and appropriate authorities and responsibilities in the pursuit of objectives.</strong> This principle assumes organizational structures composed of human actors with defined roles. AI agents do not sit within organizational charts. They do not report to supervisors. Their &ldquo;authority&rdquo; is defined by access permissions and system configurations, not by the management structures that COSO contemplates. AI agents operate outside the entity-level controls that COSO contemplates for establishing organizational accountability structures. The result is an accountability gap: when an AI agent takes an action that affects financial reporting, there is no clear &ldquo;reporting line&rdquo; connecting that action to an accountable human within the organizational structure <span class="cite">(Yeung 2018)</span>.</p>
+
+<p class="principle"><strong>Principle 4: The organization demonstrates a commitment to attract, develop, and retain competent individuals in alignment with objectives.</strong> AI agents are not &ldquo;attracted, developed, and retained&rdquo; in the human resource sense. They are procured, deployed, and decommissioned. The competence of an AI agent is not evaluated through the same mechanisms used for human employees (performance reviews, professional certifications, continuing education), and there is no COSO-equivalent framework for assessing whether an AI agent possesses the &ldquo;competence&rdquo; necessary to participate in financial reporting processes <span class="cite">(Akhtar 2023)</span>. Masli et al. <span class="cite">(2010)</span> examine the potential benefits of IT-related internal control monitoring technology, finding that effective IT governance requires systematic evaluation of technology capabilities; the analogous evaluation framework for AI agents does not yet exist within the COSO structure.</p>
+
+<p class="principle"><strong>Principle 5: The organization holds individuals accountable for their internal control responsibilities in the pursuit of objectives.</strong> This is the most explicit human assumption in the Control Environment component. The regulation assumes that control actors are individuals who can be held accountable through disciplinary mechanisms, professional sanctions, and personal legal liability. Autonomous agents exhibit the property of being non-accountable in any legal or organizational sense: they cannot be disciplined, terminated for cause, or subjected to personal liability. The gap is that the accountability framework has no direct target when an AI agent makes an error equivalent to a human control failure (Accountability Target Gap, G2).</p>
+
+<div class="back-to-top"><a href="#appendix-a">&uarr; Back to top</a></div>
+
+<!-- A.2 -->
+<h3 id="a2">A.2 Risk Assessment (Principles 6&ndash;9)</h3>
+
+<p>The Risk Assessment component requires the organization to &ldquo;identify and assess risks to the achievement of its objectives&rdquo; and to &ldquo;consider the potential for fraud&rdquo; <span class="cite">(COSO 2013)</span>. It encompasses four principles:</p>
+
+<p class="principle"><strong>Principle 6: The organization specifies objectives with sufficient clarity to enable the identification and assessment of risks relating to objectives.</strong> In AI agent environments, the challenge is that the organization may specify financial reporting objectives clearly but may not understand how an AI agent&rsquo;s operational objectives interact with those reporting objectives. An AI agent optimized for speed in invoice processing may introduce classification errors that create financial reporting risk, yet this risk may not be identified because the agent&rsquo;s optimization function is not mapped to the organization&rsquo;s risk assessment <span class="cite">(Agrawal, Gans, and Goldfarb 2022)</span>.</p>
+
+<p class="principle"><strong>Principle 7: The organization identifies risks to the achievement of its objectives across the entity and analyzes risks as a basis for determining how the risks should be managed.</strong> Risk identification for AI agents requires understanding failure modes that differ from human failure modes. Humans make errors of omission, judgment, and intent. AI agents exhibit drift, hallucination, distribution shift, adversarial vulnerability, and emergent behavior <span class="cite">(NIST 2023)</span>. None of these categories appear in standard COSO risk assessment templates, and most internal audit functions lack the technical expertise to identify them.</p>
+
+<p class="principle"><strong>Principle 8: The organization considers the potential for fraud in assessing risks to the achievement of objectives.</strong> COSO&rsquo;s fraud risk assessment framework incorporates the &ldquo;fraud triangle&rdquo;&mdash;pressure, opportunity, and rationalization&mdash;originating from Cressey&rsquo;s work on trust violation <span class="cite">(Cressey 1953)</span>. AI agents experience none of these. They cannot be pressured, they do not rationalize, and their &ldquo;opportunity&rdquo; is a function of system access rather than organizational position. Yet AI agents can produce outputs that are functionally equivalent to fraud through optimization behaviors, data errors, or adversarial manipulation. The regulation assumes fraud risk arises from human motivations; autonomous agents exhibit failure modes that produce functionally fraudulent outcomes without intent (Risk Taxonomy Gap, G4).</p>
+
+<p class="principle"><strong>Principle 9: The organization identifies and assesses changes that could significantly impact the system of internal control.</strong> AI agents introduce a category of change that COSO does not contemplate: continuous, autonomous adaptation. Machine learning models update their parameters as new data arrives. Agentic systems modify their behavior based on environmental feedback. Unlike changes in human processes, which are typically discrete, documented, and approved through change management procedures, AI agent behavioral changes are continuous, implicit, and may not trigger existing change management controls <span class="cite">(Sculley et al. 2015)</span>.</p>
+
+<div class="back-to-top"><a href="#appendix-a">&uarr; Back to top</a></div>
+
+<!-- A.3 -->
+<h3 id="a3">A.3 Control Activities (Principles 10&ndash;12)</h3>
+
+<p>Control Activities are &ldquo;the actions established through policies and procedures that help ensure that management&rsquo;s directives to mitigate risks to the achievement of objectives are carried out&rdquo; <span class="cite">(COSO 2013)</span>. This component encompasses three principles:</p>
+
+<p class="principle"><strong>Principle 10: The organization selects and develops control activities that contribute to the mitigation of risks to the achievement of objectives to acceptable levels.</strong> Traditional control activities include segregation of duties, authorization requirements, reconciliation procedures, and physical controls. Each assumes human operators. Segregation of duties, for example, requires that no single individual controls all phases of a transaction. When an AI agent processes a transaction end-to-end (from initiation to classification to posting), the concept of segregation breaks down entirely, because a single software process performs functions that would be divided among multiple humans <span class="cite">(ISACA 2025)</span>.</p>
+
+<p class="principle"><strong>Principle 11: The organization selects and develops general control activities over technology to support the achievement of objectives.</strong> General IT controls (GITCs), including access controls, change management, program development, and computer operations, were designed for deterministic software systems. An ERP module processes transactions according to fixed rules that can be tested and verified. An AI agent processes transactions according to learned patterns that may not be fully documented, may change over time, and may produce different outputs from similar inputs. Existing GITCs do not address the non-deterministic nature of AI agent behavior.</p>
+
+<p class="principle"><strong>Principle 12: The organization deploys control activities through policies that establish what is expected and procedures that put policies into action.</strong> Policies and procedures assume human comprehension and compliance. An organization can write a policy stating that &ldquo;all journal entries above $50,000 require manager approval&rdquo; and implement a procedure requiring the manager to review and sign the entry. When an AI agent generates the journal entry, the policy applies, but the procedure must be redesigned to account for the speed, volume, and opacity of agent-generated entries. In practice, many organizations deploying AI agents in financial processes have not updated their SOX control documentation to reflect the agent&rsquo;s role <span class="cite">(EY 2025)</span>.</p>
+
+<div class="back-to-top"><a href="#appendix-a">&uarr; Back to top</a></div>
+
+<!-- A.4 -->
+<h3 id="a4">A.4 Information and Communication (Principles 13&ndash;15)</h3>
+
+<p>The Information and Communication component requires the organization to &ldquo;obtain or generate and use relevant, quality information to support the functioning of internal control&rdquo; <span class="cite">(COSO 2013)</span>. It encompasses three principles:</p>
+
+<p class="principle"><strong>Principle 13: The organization obtains or generates and uses relevant, quality information to support the functioning of internal control.</strong> AI agents both consume and produce information within the financial reporting chain. The quality of information produced by an AI agent depends on the quality of its training data, the appropriateness of its model architecture, and the correctness of its deployment configuration. None of these quality dimensions are addressed by COSO&rsquo;s information quality framework, which focuses on timeliness, completeness, accuracy, and accessibility of information produced by human-operated systems <span class="cite">(COSO 2013)</span>.</p>
+
+<p class="principle"><strong>Principle 14: The organization internally communicates information, including objectives and responsibilities for internal control, necessary to support the functioning of internal control.</strong> This principle assumes that information can be communicated to the actors performing control functions. AI agents do not receive &ldquo;communication&rdquo; about objectives and responsibilities in the way that human employees do. They are configured through parameters, prompts, and constraints, a communication modality not addressed by existing internal communication frameworks.</p>
+
+<p class="principle"><strong>Principle 15: The organization communicates with external parties regarding matters affecting the functioning of internal control.</strong> External communication about AI agent involvement in financial reporting raises disclosure questions that current guidance does not address. Companies are not required to disclose the extent to which AI agents participate in their financial reporting processes, the controls (if any) governing those agents, or the risk that agent behavior could produce misstatements. The SEC&rsquo;s 2023 cybersecurity disclosure rules provide a partial analogy, but they do not extend to AI agent risk in financial reporting <span class="cite">(SEC 2023)</span>.</p>
+
+<div class="back-to-top"><a href="#appendix-a">&uarr; Back to top</a></div>
+
+<!-- A.5 -->
+<h3 id="a5">A.5 Monitoring (Principles 16&ndash;17)</h3>
+
+<p>The Monitoring component requires the organization to &ldquo;select, develop, and perform ongoing and/or separate evaluations to ascertain whether the components of internal control are present and functioning&rdquo; <span class="cite">(COSO 2013)</span>. It encompasses two principles:</p>
+
+<p class="principle"><strong>Principle 16: The organization selects, develops, and performs ongoing and/or separate evaluations to ascertain whether the components of internal control are present and functioning.</strong> Monitoring of human-operated controls relies on observation, testing, and evaluation of control performance. Monitoring of AI agent-operated controls requires different capabilities: model performance monitoring, drift detection, output validation, and behavioral analysis. Internal audit functions are typically not staffed with personnel who possess these technical competencies <span class="cite">(IIA 2025)</span>.</p>
+
+<p class="principle"><strong>Principle 17: The organization evaluates and communicates internal control deficiencies in a timely manner to those parties responsible for taking corrective action, including senior management and the board of directors, as appropriate.</strong> When an AI agent produces an output that constitutes a control deficiency, the deficiency may not be detectable through existing monitoring mechanisms. AI agent errors can be subtle (a gradual shift in classification patterns, an incremental bias in estimates, a systematic but small-magnitude misapplication of accounting standards) in ways that differ from human errors, which tend to be more discrete and identifiable <span class="cite">(NIST 2023)</span>.</p>
+
+<div class="back-to-top"><a href="#appendix-a">&uarr; Back to top</a></div>
+
+<!-- ================================================================ -->
+<h2 id="appendix-b">Appendix B. Detailed COSO Extension Definitions</h2>
+
+<p>This appendix provides the complete specifications of all 17 proposed COSO extensions for agentic AI in financial reporting environments. The main paper summarizes these extensions in Table&nbsp;6. Each extension is designed to supplement (not replace) the existing COSO Internal Control &mdash; Integrated Framework (2013) by addressing the assumption&ndash;violation gaps identified in the main paper.</p>
+
+<!-- B.1 -->
+<h3 id="b1">B.1 Control Environment Extensions (1.1&ndash;1.4)</h3>
+
+<div class="extension">
+<span class="ext-label">Extension 1.1 &mdash; Agent Registry:</span> The organization maintains a complete inventory of all AI agents that create, modify, classify, or process data within the financial reporting chain. The registry documents each agent&rsquo;s identity, purpose, scope of operation, data access, model type, deployment date, and designated human accountability owner. The registry is updated within 48 hours of any agent deployment, modification, or decommissioning.
+</div>
+
+<div class="extension">
+<span class="ext-label">Extension 1.2 &mdash; Agent Accountability Ownership:</span> For each AI agent in the registry, the organization designates a human &ldquo;agent accountability owner&rdquo; who is responsible for: (a) understanding the agent&rsquo;s operational behavior at a level sufficient to evaluate its impact on financial reporting; (b) ensuring that controls governing the agent are designed and operating effectively; (c) escalating agent behavioral anomalies to management and the audit committee; and (d) attesting to the agent&rsquo;s performance as part of management&rsquo;s ICFR assessment.
+</div>
+
+<div class="extension">
+<span class="ext-label">Extension 1.3 &mdash; Agent Competence Validation:</span> The organization establishes standards for evaluating the &ldquo;competence&rdquo; of AI agents participating in financial reporting processes, including: accuracy benchmarks for agent outputs in specific financial process domains; minimum explainability thresholds for agent decisions that affect material accounts; and periodic revalidation requirements to confirm that agent performance has not degraded.
+</div>
+
+<div class="extension">
+<span class="ext-label">Extension 1.4 &mdash; Board AI Competence:</span> The board of directors, through its audit committee, develops sufficient understanding of AI agent deployment in financial processes to exercise effective oversight. This includes receiving periodic briefings on agent deployment, performance, and risk; designating at least one audit committee member with AI governance expertise or retaining an independent AI advisor; and reviewing the agent registry and accountability ownership designations.
+</div>
+
+<!-- B.2 -->
+<h3 id="b2">B.2 Risk Assessment Extensions (2.1&ndash;2.3)</h3>
+
+<div class="extension">
+<span class="ext-label">Extension 2.1 &mdash; AI Agent Risk Taxonomy:</span> The organization adopts a risk taxonomy for AI agents in financial processes that includes, at minimum: model drift risk; hallucination risk; classification bias risk; optimization misalignment risk; and adversarial manipulation risk.
+</div>
+
+<div class="extension">
+<span class="ext-label">Extension 2.2 &mdash; Agent Fraud Risk Assessment:</span> The organization extends its fraud risk assessment to include non-intentional agent behaviors that produce functionally fraudulent outcomes. This assessment recognizes that AI agents cannot commit fraud (they lack intent) but can produce outputs that are equivalent in effect to fraudulent manipulation, and that the absence of intent does not reduce the financial reporting risk.
+</div>
+
+<div class="extension">
+<span class="ext-label">Extension 2.3 &mdash; Continuous Change Monitoring:</span> The organization establishes monitoring mechanisms that detect changes in AI agent behavior on a continuous basis, rather than relying on discrete change management procedures. This includes automated drift detection, output distribution monitoring, and anomaly detection systems that trigger alerts when agent behavior deviates from established baselines.
+</div>
+
+<!-- B.3 -->
+<h3 id="b3">B.3 Control Activities Extensions (3.1&ndash;3.4)</h3>
+
+<div class="extension">
+<span class="ext-label">Extension 3.1 &mdash; Agent Segregation of Functions:</span> For financial processes operated by AI agents, the organization implements functional segregation: no single agent or integrated agent system performs initiation, authorization, processing, recording, and reconciliation of a financial transaction. Where functional segregation is not feasible, organizations should implement compensating controls, including mandatory human review at defined breakpoints and independent validation of agent outputs, to achieve equivalent assurance.
+</div>
+
+<div class="extension">
+<span class="ext-label">Extension 3.2 &mdash; Agent Output Validation Controls:</span> For material financial processes operated by AI agents, the organization implements output validation controls that test agent outputs against independent benchmarks, human expert judgment, or alternative computational methods. Validation controls operate on a continuous basis and cover a statistically significant portion of agent-processed transactions, not merely a management-selected sample.
+</div>
+
+<div class="extension">
+<span class="ext-label">Extension 3.3 &mdash; Agent Determinism Requirements:</span> For financial processes where reperformance is a critical audit requirement, the organization deploys AI agents that produce deterministic outputs or maintains sufficient process documentation to enable reconstruction of the agent&rsquo;s output for any historical transaction. This includes capturing the model version, input data, configuration parameters, and random seeds (where applicable) at the time of each agent action.
+</div>
+
+<div class="extension">
+<span class="ext-label">Extension 3.4 &mdash; Materiality-Based Human Review:</span> The organization establishes risk-based thresholds for human review of agent-processed transactions that are calibrated to financial reporting materiality, not operational efficiency. The thresholds ensure that: (a) all agent-processed transactions affecting material accounts above a defined threshold receive human review; (b) a statistically valid sample of below-threshold transactions receives human review; and (c) the sampling methodology is documented, risk-stratified, and subject to independent evaluation.
+</div>
+
+<!-- B.4 -->
+<h3 id="b4">B.4 Information and Communication Extensions (4.1&ndash;4.3)</h3>
+
+<div class="extension">
+<span class="ext-label">Extension 4.1 &mdash; Agent Action Audit Trail:</span> Every AI agent action that creates, modifies, classifies, or processes financial data generates an immutable audit trail record that includes: the agent&rsquo;s identity; the timestamp of the action; the input data consumed; the output data produced; the model version and configuration parameters in effect; the decision basis (to the extent explicable); and any exceptions or anomalies detected. The audit trail is maintained in a format accessible to both internal and external auditors.
+</div>
+
+<div class="extension">
+<span class="ext-label">Extension 4.2 &mdash; Agent Explainability Standards:</span> For agent decisions that affect material financial statement amounts, the organization implements explainability mechanisms that provide human-readable explanations of the agent&rsquo;s decision basis. These explanations need not capture the full complexity of the agent&rsquo;s internal processing but must be sufficient for a qualified reviewer to evaluate whether the decision is reasonable and consistent with applicable accounting standards.
+</div>
+
+<div class="extension">
+<span class="ext-label">Extension 4.3 &mdash; External Disclosure:</span> The organization discloses in its annual report: (a) the extent to which AI agents participate in financial reporting processes; (b) the material financial processes in which AI agents operate; (c) the controls governing AI agent behavior in financial processes; and (d) any material risks associated with AI agent deployment that could affect the reliability of financial reporting.
+</div>
+
+<!-- B.5 -->
+<h3 id="b5">B.5 Monitoring Extensions (5.1&ndash;5.3)</h3>
+
+<p>The concept of continuous monitoring of AI agent operations has intellectual antecedents in the continuous auditing literature. Vasarhelyi and Halper <span class="cite">(1991)</span> first proposed continuous auditing of online systems. Rezaee et al. <span class="cite">(2002)</span> extended the framework to automated auditing capability. Alles, Kogan, and Vasarhelyi <span class="cite">(2008)</span> developed the theory for complex information systems. The extensions below apply these principles to autonomous AI agents in financial reporting.</p>
+
+<div class="extension">
+<span class="ext-label">Extension 5.1 &mdash; Continuous Agent Performance Monitoring:</span> The organization implements automated monitoring systems that continuously evaluate AI agent performance against defined accuracy, consistency, and reliability metrics. Monitoring systems generate alerts when agent performance degrades below defined thresholds, when output distributions shift, or when agent behavior deviates from established baselines.
+</div>
+
+<div class="extension">
+<span class="ext-label">Extension 5.2 &mdash; Independent Agent Evaluation:</span> The organization establishes an independent evaluation function, whether within internal audit or a separate AI assurance function, that periodically validates AI agent behavior in financial processes. The evaluation includes: testing agent outputs against known-correct results; evaluating agent behavior under stress conditions; and assessing whether agent controls are designed and operating effectively.
+</div>
+
+<div class="extension">
+<span class="ext-label">Extension 5.3 &mdash; Deficiency Escalation Protocol:</span> The organization establishes a deficiency escalation protocol specific to AI agent deficiencies that includes: defined severity classifications for agent behavioral anomalies; escalation timelines that account for the potential speed and scope of agent-caused misstatements; and communication channels that ensure the audit committee is informed of material agent deficiencies within the same timelines applicable to human-caused control deficiencies.
+</div>
+
+<div class="back-to-top"><a href="#appendix-b">&uarr; Back to top</a></div>
+
+<footer>
+  Online Appendix for &ldquo;Technical Assumptions in SOX Section 302/404 and the Autonomous Agent Challenge&rdquo;<br>
+  LaTeX source and compiled PDF also available in this repository.
+</footer>
+
+</body>
+</html>
