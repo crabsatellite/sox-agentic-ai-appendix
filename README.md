@@ -1,6 +1,6 @@
 # Online Appendix
 
-**Paper:** Technical Assumptions in SOX Section 302/404 and the Autonomous Agent Challenge: A Structured Assumption–Violation Mapping of Internal Controls Over Financial Reporting in Agentic AI Environments
+**Paper:** AI Agents and Sarbanes-Oxley Internal Control: Six Structural Gaps in Financial Reporting
 
 **Submitted to:** Journal of Emerging Technologies in Accounting (JETA), Special Section: Agentic AI in Auditing and Accounting
 
